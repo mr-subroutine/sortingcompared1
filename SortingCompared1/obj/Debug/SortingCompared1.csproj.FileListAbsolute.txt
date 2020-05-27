@@ -1,0 +1,10 @@
+C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\bin\Debug\SortingCompared1.exe.config
+C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\bin\Debug\SortingCompared1.exe
+C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\bin\Debug\SortingCompared1.pdb
+C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\obj\Debug\SortingCompared1.csprojAssemblyReference.cache
+C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\obj\Debug\SortingCompared1.Form1.resources
+C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\obj\Debug\SortingCompared1.Properties.Resources.resources
+C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\obj\Debug\SortingCompared1.csproj.GenerateResource.cache
+C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\obj\Debug\SortingCompared1.csproj.CoreCompileInputs.cache
+C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\obj\Debug\SortingCompared1.exe
+C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\obj\Debug\SortingCompared1.pdb
