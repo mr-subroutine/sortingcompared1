@@ -38,12 +38,12 @@ namespace SortingCompared1
             string tempValue1;
             int tempValue2;
             bool duplicateFound = false;
-            string[] unorderedArray = new string[7];
+            string[] unorderedArray = new string[199];
 
             for (int i = 0; i < unorderedArray.Length; i++)
             {
                 // random number for storing
-                myRandom = getRandom.Next(1, 1001);
+                myRandom = getRandom.Next(1, 599);
                 tempValue1 = myRandom.ToString();
 
                 // checks to see if value is in the array if so it sends the array counter back one, if not it will be null and move to next
@@ -80,27 +80,25 @@ namespace SortingCompared1
             textBox1.Clear();
             writeFile();
             button1.Enabled = false;
-            int[] tempArray1 = new int[1001];
-            int tempValue;
+            
+            int arrayCounter = 0;
+
+            string[] tempArray1 = new string[600];
+            string[] writeArray1 = new string[600];
             for (int i = 0; i < unorderedNumbers.Length; i++)
             {
-                // takes value stored in unordered numbers i and placed into tempValue
-                tempValue = Int32.Parse(unorderedNumbers[i]);
-                // Array Counter
-                // places the temp value in the numbered array and puts a 1 there.  So if tempValue is 3, it puts a 1 at index tempValue[3]
-                tempArray1[tempValue] = tempArray1[tempValue] + 1;
+                int numValue = Convert.ToInt32(unorderedNumbers[i]);
+                tempArray1[numValue] = tempArray1[numValue] + 1.ToString();
             }
 
-            int arrayTracker;
             for (int i = 0; i < tempArray1.Length; i++)
             {
-                // cycles through entire array from 0 - full length, if a 1 is found at an index, it puts that index value into the...
-                // array which is the actual number from the original unordered list.
-                if (tempArray1[i] != 0)
+                if (tempArray1[i] != null && Convert.ToInt32(tempArray1[i]) != 0)
                 {
-                    arrayTracker = i;
-                    textBox1.Text += arrayTracker.ToString();
+                    writeArray1[arrayCounter] = i.ToString();
+                    textBox1.Text += writeArray1[arrayCounter];
                     textBox1.Text += Environment.NewLine;
+                    arrayCounter++;
                 }
             }
         }
