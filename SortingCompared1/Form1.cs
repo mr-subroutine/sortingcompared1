@@ -22,9 +22,6 @@ namespace SortingCompared1
 
         static Random getRandom = new Random();
         string[] unorderedNumbers = getRandomNumbers();
-        //string[] unorderedNumbers = { "79", "91", "81", "100", "90", "999", "93", "92", "67",
-        //        "55", "45", "20", "46", "71", "501", "22", "30","25", "3", "99", "89",
-        //        "23", "47", "80", "82", "33", "8", "66", "43", "65", "73", "5", "6", "15", "11", "1000", "1"};
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -38,11 +35,11 @@ namespace SortingCompared1
         private static string[] getRandomNumbers()
         {
             int myRandom;
-            string[] unorderedArray = new string[1002];
+            string[] unorderedArray = new string[1001];
 
             for (int i = 0; i < unorderedArray.Length; i++)
             {
-                myRandom = getRandom.Next(1, 1002);
+                myRandom = getRandom.Next(1, 1001);
                 foreach (string num in unorderedArray)
                 {
                     if (num != Convert.ToString(myRandom))
@@ -66,18 +63,18 @@ namespace SortingCompared1
             textBox1.Clear();
             writeFile();
             button1.Enabled = false;
-            int[] tempArray1 = new int[1002];
+            int[] tempArray1 = new int[1001];
             int tempValue;
-            for (int i = 0; i < unorderedNumbers.Length; i++)
+            for (int i = 1; i < unorderedNumbers.Length; i++)
             {
                 tempValue = Int32.Parse(unorderedNumbers[i]);
                 tempArray1[tempValue] = tempArray1[tempValue] + 1;
             }
 
             int arrayTracker;
-            for (int i = 0; i < tempArray1.Length; i++)
+            for (int i = 1; i < tempArray1.Length; i++)
             {
-                if (tempArray1[i] == 1)
+                if (tempArray1[i] != 0)
                 {
                     arrayTracker = i;
                     textBox1.Text += arrayTracker.ToString();
@@ -99,7 +96,6 @@ namespace SortingCompared1
             textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
-            textBox5.Clear();
             button1.Enabled = true;
             button2.Enabled = true;
         }
