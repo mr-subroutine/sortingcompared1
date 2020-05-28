@@ -35,19 +35,30 @@ namespace SortingCompared1
         private static string[] getRandomNumbers()
         {
             int myRandom;
-            string[] unorderedArray = new string[1001];
+            string tempValue1;
+            int tempValue2;
+            bool duplicateFound = false;
+            string[] unorderedArray = new string[7];
 
             for (int i = 0; i < unorderedArray.Length; i++)
             {
+
                 myRandom = getRandom.Next(1, 1001);
-                foreach (string num in unorderedArray)
+                tempValue1 = myRandom.ToString();
+                tempValue2 = Array.IndexOf(unorderedArray, tempValue1, 0);
+                if (tempValue2 != -1)
                 {
-                    if (num != Convert.ToString(myRandom))
-                    {
-                        unorderedArray[i] = myRandom.ToString();
-                    }
+                    duplicateFound = true;
+                    i -= 1;
                 }
+
+                if (duplicateFound == false)
+                {
+                    unorderedArray[i] = myRandom.ToString();
+                }
+                duplicateFound = false;
             }
+
             return unorderedArray;
         }
 
@@ -65,14 +76,14 @@ namespace SortingCompared1
             button1.Enabled = false;
             int[] tempArray1 = new int[1001];
             int tempValue;
-            for (int i = 1; i < unorderedNumbers.Length; i++)
+            for (int i = 0; i < unorderedNumbers.Length; i++)
             {
                 tempValue = Int32.Parse(unorderedNumbers[i]);
                 tempArray1[tempValue] = tempArray1[tempValue] + 1;
             }
 
             int arrayTracker;
-            for (int i = 1; i < tempArray1.Length; i++)
+            for (int i = 0; i < tempArray1.Length; i++)
             {
                 if (tempArray1[i] != 0)
                 {
