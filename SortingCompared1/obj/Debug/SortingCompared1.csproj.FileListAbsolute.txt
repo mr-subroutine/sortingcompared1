@@ -7,4 +7,3 @@ C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\obj\Debug\SortingC
 C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\obj\Debug\SortingCompared1.csproj.CoreCompileInputs.cache
 C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\obj\Debug\SortingCompared1.exe
 C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\obj\Debug\SortingCompared1.pdb
-C:\Users\gamef\source\repos\SortingCompared1\SortingCompared1\obj\Debug\SortingCompared1.csprojAssemblyReference.cache

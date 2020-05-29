@@ -22,6 +22,7 @@ namespace SortingCompared1
 
         static Random getRandom = new Random();
         string[] unorderedNumbers = getRandomNumbers();
+        //int[] unorderedConvertedNum = convertArrayToInt(unorderedNumbers);
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -32,18 +33,29 @@ namespace SortingCompared1
             }
         }
 
+        private static int[] convertArrayToInt(string[] unorderedNumbers)
+        {
+            int[] unorderedInts = new int[unorderedNumbers.Length];
+
+            for (int i = 0; i < unorderedNumbers.Length; i++)
+            {
+                unorderedInts[i] = Convert.ToInt32(unorderedNumbers[i]);
+            }
+            return unorderedInts;
+        }
+
         private static string[] getRandomNumbers()
         {
             int myRandom;
             string tempValue1;
             int tempValue2;
             bool duplicateFound = false;
-            string[] unorderedArray = new string[500];
+            string[] unorderedArray = new string[1000];
 
             for (int i = 0; i < unorderedArray.Length; i++)
             {
                 // random number for storing
-                myRandom = getRandom.Next(1, 1500);
+                myRandom = getRandom.Next(1, 3000);
                 tempValue1 = myRandom.ToString();
 
                 // checks to see if value is in the array if so it sends the array counter back one, if not it will be null and move to next
@@ -83,10 +95,11 @@ namespace SortingCompared1
 
             int arrayCounter = 0;
 
+            // PERSONAL ALGORITHMIC SOLUTION
             // loops through unorderednumbers array and assigns the value to numVal...
             //then adds a 1 to the index in tempArray1 matching what values are there.
-            string[] tempArray1 = new string[1500];
-            string[] writeArray1 = new string[1500];
+            string[] tempArray1 = new string[3000];
+            string[] writeArray1 = new string[1000];
             for (int i = 0; i < unorderedNumbers.Length; i++)
             {
                 int numValue = Convert.ToInt32(unorderedNumbers[i]);
@@ -114,14 +127,10 @@ namespace SortingCompared1
             button2.Enabled = false;
 
             // turn unordered values into ints
-            int[] unorderedInts = new int[unorderedNumbers.Length];
-
-            for (int i = 0; i < unorderedNumbers.Length; i++)
-            {
-                unorderedInts[i] = Convert.ToInt32(unorderedNumbers[i]);
-            }
-
+            int[] unorderedInts = convertArrayToInt(unorderedNumbers);
             int storageVar = 0;
+
+            // BUBBLE SORT algorithm
             for (int j = 0; j <= unorderedInts.Length - 2; j++)
             {
                 for (int i = 0; i <= unorderedInts.Length - 2; i++)
@@ -148,8 +157,61 @@ namespace SortingCompared1
             textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
+            textBox6.Clear();
             button1.Enabled = true;
             button2.Enabled = true;
+            button4.Enabled = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox6.Clear();
+            writeFile();
+            button4.Enabled = false;
+            int[] unorderedIntArr = convertArrayToInt(unorderedNumbers);
+            unorderedIntArr = quickSort(unorderedIntArr, 0, unorderedNumbers.Length - 1);
+
+            for (int k = 0; k < unorderedIntArr.Length; k++)
+            {
+                textBox6.Text += unorderedIntArr[k];
+                textBox6.Text += Environment.NewLine;
+            }
+        }
+
+        // QUICK SORT algorithm
+        private int[] quickSort(int[] unorderedArray, int left, int right)
+        {
+            int i = left;
+            int j = right;
+
+            var pivot = unorderedArray[(left + right) / 2];
+
+            while (i <= j)
+            {
+                while (unorderedArray[i] < pivot)
+                    i++;
+
+                while (unorderedArray[j] > pivot)
+                    j--;
+
+                if (i <= j)
+                {
+                    var tmp = unorderedArray[i];
+                    unorderedArray[i] = unorderedArray[j];
+                    unorderedArray[j] = tmp;
+
+                    i++;
+                    j--;
+                }
+            }
+
+            if (left < j)
+                quickSort(unorderedArray, left, j);
+
+            if (i < right)
+                quickSort(unorderedArray, i, right);
+
+            return unorderedArray;
         }
     }
 }
