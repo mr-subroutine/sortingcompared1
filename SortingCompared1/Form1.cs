@@ -22,7 +22,7 @@ namespace SortingCompared1
 
         static Random getRandom = new Random();
         string[] unorderedNumbers = getRandomNumbers();
-        //int[] unorderedConvertedNum = convertArrayToInt(unorderedNumbers);
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -89,6 +89,9 @@ namespace SortingCompared1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var watch = new System.Diagnostics.Stopwatch();
+            watch.Start();
+
             textBox1.Clear();
             writeFile();
             button1.Enabled = false;
@@ -118,10 +121,17 @@ namespace SortingCompared1
                     arrayCounter++;
                 }
             }
+
+            watch.Stop();
+            double time = watch.ElapsedMilliseconds / 1000.0;
+            textBox3.Text = time.ToString() + " seconds to execute.";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            var watch = new System.Diagnostics.Stopwatch();
+            watch.Start();
+            
             textBox2.Clear();
             writeFile();
             button2.Enabled = false;
@@ -149,6 +159,10 @@ namespace SortingCompared1
                 textBox2.Text += unorderedInts[i];
                 textBox2.Text += Environment.NewLine;
             }
+
+            watch.Stop();
+            double time = watch.ElapsedMilliseconds / 1000.0;
+            textBox4.Text = time.ToString() + " seconds to execute.";
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -158,7 +172,9 @@ namespace SortingCompared1
             textBox3.Clear();
             textBox4.Clear();
             textBox6.Clear();
+            textBox7.Clear();
             textBox8.Clear();
+            textBox9.Clear();
             button1.Enabled = true;
             button2.Enabled = true;
             button4.Enabled = true;
@@ -167,6 +183,9 @@ namespace SortingCompared1
 
         private void button4_Click(object sender, EventArgs e)
         {
+            var watch = new System.Diagnostics.Stopwatch();
+            watch.Start();
+
             textBox6.Clear();
             writeFile();
             button4.Enabled = false;
@@ -178,6 +197,10 @@ namespace SortingCompared1
                 textBox6.Text += unorderedIntArr[k];
                 textBox6.Text += Environment.NewLine;
             }
+
+            watch.Stop();
+            double time = watch.ElapsedMilliseconds / 1000.0;
+            textBox7.Text = time.ToString() + " seconds to execute.";
         }
 
         // QUICK SORT algorithm
@@ -224,10 +247,12 @@ namespace SortingCompared1
         // Microsoft Array Sorting algorithm C# DOCS
         private void MicrosoftSortMethod()
         {
+            var watch = new System.Diagnostics.Stopwatch();
+            watch.Start();
+
             textBox8.Clear();
             writeFile();
             button5.Enabled = false;
-
             int[] unorderedIntArr = convertArrayToInt(unorderedNumbers);
 
             Array.Sort(unorderedIntArr);
@@ -236,6 +261,10 @@ namespace SortingCompared1
                 textBox8.Text += unorderedIntArr[i].ToString();
                 textBox8.Text += Environment.NewLine;
             }
+
+            watch.Stop();
+            double time = watch.ElapsedMilliseconds / 1000.0;
+            textBox9.Text = time.ToString() + " seconds to execute.";
         }
     }
 }
