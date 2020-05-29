@@ -158,9 +158,11 @@ namespace SortingCompared1
             textBox3.Clear();
             textBox4.Clear();
             textBox6.Clear();
+            textBox8.Clear();
             button1.Enabled = true;
             button2.Enabled = true;
             button4.Enabled = true;
+            button5.Enabled = true;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -212,6 +214,28 @@ namespace SortingCompared1
                 quickSort(unorderedArray, i, right);
 
             return unorderedArray;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MicrosoftSortMethod();
+        }
+
+        // Microsoft Array Sorting algorithm C# DOCS
+        private void MicrosoftSortMethod()
+        {
+            textBox8.Clear();
+            writeFile();
+            button5.Enabled = false;
+
+            int[] unorderedIntArr = convertArrayToInt(unorderedNumbers);
+
+            Array.Sort(unorderedIntArr);
+            for (int i = 0; i < unorderedIntArr.Length; i++)
+            {
+                textBox8.Text += unorderedIntArr[i].ToString();
+                textBox8.Text += Environment.NewLine;
+            }
         }
     }
 }

@@ -43,6 +43,11 @@
             this.button4 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -123,19 +128,19 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(26, 45);
+            this.textBox5.Location = new System.Drawing.Point(26, 38);
             this.textBox5.MaxLength = 100000;
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox5.Size = new System.Drawing.Size(205, 117);
+            this.textBox5.Size = new System.Drawing.Size(205, 124);
             this.textBox5.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 26);
+            this.label3.Location = new System.Drawing.Point(26, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 13);
             this.label3.TabIndex = 9;
@@ -143,7 +148,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(674, 12);
+            this.button3.Location = new System.Drawing.Point(937, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 10;
@@ -189,11 +194,63 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Sorted Values - Algorithm Used";
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(807, 204);
+            this.textBox8.MaxLength = 100000;
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox8.Size = new System.Drawing.Size(205, 270);
+            this.textBox8.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(804, 187);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(153, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Sorted Values - Algorithm Used";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(807, 492);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(205, 20);
+            this.textBox9.TabIndex = 17;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(807, 528);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(205, 23);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "Microsoft Array Sort Method";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(26, 22);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(111, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "[Text File In bin folder]";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 568);
+            this.ClientSize = new System.Drawing.Size(1042, 568);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.button4);
@@ -235,6 +292,11 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label6;
     }
 }
 
