@@ -44,7 +44,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(26, 204);
-            this.textBox1.MaxLength = 30002;
+            this.textBox1.MaxLength = 100000;
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -55,7 +55,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(282, 204);
-            this.textBox2.MaxLength = 30002;
+            this.textBox2.MaxLength = 100000;
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -120,7 +120,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(26, 45);
-            this.textBox5.MaxLength = 30002;
+            this.textBox5.MaxLength = 100000;
             this.textBox5.Multiline = true;
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;

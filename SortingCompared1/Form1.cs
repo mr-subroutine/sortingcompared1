@@ -38,12 +38,12 @@ namespace SortingCompared1
             string tempValue1;
             int tempValue2;
             bool duplicateFound = false;
-            string[] unorderedArray = new string[199];
+            string[] unorderedArray = new string[500];
 
             for (int i = 0; i < unorderedArray.Length; i++)
             {
                 // random number for storing
-                myRandom = getRandom.Next(1, 599);
+                myRandom = getRandom.Next(1, 1500);
                 tempValue1 = myRandom.ToString();
 
                 // checks to see if value is in the array if so it sends the array counter back one, if not it will be null and move to next
@@ -80,17 +80,21 @@ namespace SortingCompared1
             textBox1.Clear();
             writeFile();
             button1.Enabled = false;
-            
+
             int arrayCounter = 0;
 
-            string[] tempArray1 = new string[600];
-            string[] writeArray1 = new string[600];
+            // loops through unorderednumbers array and assigns the value to numVal...
+            //then adds a 1 to the index in tempArray1 matching what values are there.
+            string[] tempArray1 = new string[1500];
+            string[] writeArray1 = new string[1500];
             for (int i = 0; i < unorderedNumbers.Length; i++)
             {
                 int numValue = Convert.ToInt32(unorderedNumbers[i]);
                 tempArray1[numValue] = tempArray1[numValue] + 1.ToString();
             }
 
+            // loops through tempArray looking for indicies with the value of one, then the index value itself is placed in writeArray.
+            // Remember the index is the number from the original unorderedNumbers array.
             for (int i = 0; i < tempArray1.Length; i++)
             {
                 if (tempArray1[i] != null && Convert.ToInt32(tempArray1[i]) != 0)
@@ -108,6 +112,34 @@ namespace SortingCompared1
             textBox2.Clear();
             writeFile();
             button2.Enabled = false;
+
+            // turn unordered values into ints
+            int[] unorderedInts = new int[unorderedNumbers.Length];
+
+            for (int i = 0; i < unorderedNumbers.Length; i++)
+            {
+                unorderedInts[i] = Convert.ToInt32(unorderedNumbers[i]);
+            }
+
+            int storageVar = 0;
+            for (int j = 0; j <= unorderedInts.Length - 2; j++)
+            {
+                for (int i = 0; i <= unorderedInts.Length - 2; i++)
+                {
+                    if (unorderedInts[i] > unorderedInts[i + 1])
+                    {
+                        storageVar = unorderedInts[i + 1];
+                        unorderedInts[i + 1] = unorderedInts[i];
+                        unorderedInts[i] = storageVar;
+                    }
+                }
+            }
+
+            for (int i = 0; i < unorderedInts.Length; i++)
+            {
+                textBox2.Text += unorderedInts[i];
+                textBox2.Text += Environment.NewLine;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
